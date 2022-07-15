@@ -1,0 +1,9 @@
+C:\Usuarios369\bin\Debug\usuarios369.exe
+C:\Usuarios369\bin\Debug\usuarios369.pdb
+C:\Usuarios369\obj\Debug\usuarios369.csproj.AssemblyReference.cache
+C:\Usuarios369\obj\Debug\usuarios369.Properties.Resources.resources
+C:\Usuarios369\obj\Debug\usuarios369.csproj.GenerateResource.cache
+C:\Usuarios369\obj\Debug\usuarios369.csproj.CoreCompileInputs.cache
+C:\Usuarios369\obj\Debug\usuarios369.exe
+C:\Usuarios369\obj\Debug\usuarios369.pdb
+C:\Usuarios369\obj\Debug\usuarios369.Presentacion.Usuarios.resources
