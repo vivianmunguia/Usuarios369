@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
+using System.Data;
 using System.Windows.Forms;
 using usuarios369.Logica;
 
@@ -16,11 +15,31 @@ namespace usuarios369.Datos
         {
             try
             {
+                CONEXIONMAESTRA.abrir();
+                cmd = new SqlCommand("insertar_usuario", CONEXIONMAESTRA.conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Usuario", dt.Usuario);
+                cmd.Parameters.AddWithValue("@Pass", dt.Pass);
+                cmd.Parameters.AddWithValue("@Icono", dt.Icono);
+                cmd.Parameters.AddWithValue("@Estado", dt.Estado);
 
+                if (cmd.ExecuteNonQuery() != 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
             }
         }
     }
