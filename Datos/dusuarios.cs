@@ -42,5 +42,36 @@ namespace usuarios369.Datos
                 CONEXIONMAESTRA.cerrar();
             }
         }
+
+        public DataTable mostrar_usuarios()
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                cmd = new SqlCommand("mostrar_usuarios", CONEXIONMAESTRA.conexion);
+
+                if (cmd.ExecuteNonQuery() != 0)
+                {
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dt);
+                    return dt;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
+            }
+        }
     }
 }

@@ -18,9 +18,23 @@ namespace usuarios369.Presentacion
             InitializeComponent();
         }
 
+        private void Usuarios_Load(object sender, EventArgs e)
+        {
+            mostrar_usuarios();
+        }
+
+        private void mostrar_usuarios()
+        {
+            DataTable dt;
+            dusuarios funcion = new dusuarios();
+            dt = funcion.mostrar_usuarios();
+            datalistado.DataSource = dt;
+        }
+
         private void btnInsertar_Click(object sender, EventArgs e)
         {
             panelUsuario.Visible = true;
+            panelUsuario.Dock = DockStyle.Fill;
             btnGuardar.Visible = true;
             btnGuardarCambios.Visible = false;
             txtUsuario.Clear();
@@ -48,6 +62,7 @@ namespace usuarios369.Presentacion
                 if (txtPass.Text != "")
                 {
                     insertar_usuario();
+                    mostrar_usuarios();
                 }
                 else
                 {
@@ -74,6 +89,8 @@ namespace usuarios369.Presentacion
             if (funcion.insertar(dt))
             {
                 MessageBox.Show("Usuario registrado", "Registro correcto");
+                panelUsuario.Visible = false;
+                panelUsuario.Dock = DockStyle.None;
             }
         }
     }
