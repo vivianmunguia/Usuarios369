@@ -78,7 +78,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\camara.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\lupa.png" />
   </ItemGroup>
