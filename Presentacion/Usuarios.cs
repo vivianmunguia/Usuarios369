@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using usuarios369.Datos;
+using usuarios369.Logica;
 
 namespace usuarios369.Presentacion
 {
@@ -36,6 +38,42 @@ namespace usuarios369.Presentacion
             {
                 Icono.BackgroundImage = null;
                 Icono.Image = new Bitmap(dlg.FileName);
+            }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (txtUsuario.Text != "")
+            {
+                if (txtPass.Text != "")
+                {
+                    insertar_usuario();
+                }
+                else
+                {
+                    MessageBox.Show("Ingrese una contraseña", "Sin contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Ingrese un usuario", "Sin usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void insertar_usuario()
+        {
+            lusuarios dt = new lusuarios();
+            dusuarios funcion = new dusuarios();
+            dt.Usuario = txtUsuario.Text;
+            dt.Pass = txtPass.Text;
+            System.IO.MemoryStream ms = new System.IO.MemoryStream();
+            Icono.Image.Save(ms, Icono.Image.RawFormat);
+            dt.Icono = ms.GetBuffer();
+            dt.Estado = "ACTIVO";
+
+            if (funcion.insertar(dt))
+            {
+                MessageBox.Show("Usuario registrado", "Registro correcto");
             }
         }
     }

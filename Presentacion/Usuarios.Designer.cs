@@ -138,7 +138,7 @@ namespace usuarios369.Presentacion
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 98);
+            this.dataGridView1.Location = new System.Drawing.Point(16, 98);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(200, 313);
             this.dataGridView1.TabIndex = 1;
@@ -155,7 +155,7 @@ namespace usuarios369.Presentacion
             this.panelUsuario.Controls.Add(this.txtUsuario);
             this.panelUsuario.Controls.Add(this.lblUsuario);
             this.panelUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelUsuario.Location = new System.Drawing.Point(206, 98);
+            this.panelUsuario.Location = new System.Drawing.Point(222, 98);
             this.panelUsuario.Name = "panelUsuario";
             this.panelUsuario.Size = new System.Drawing.Size(466, 313);
             this.panelUsuario.TabIndex = 2;
@@ -201,6 +201,7 @@ namespace usuarios369.Presentacion
             this.btnGuardar.TabIndex = 5;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // label2
             // 

@@ -15,32 +15,32 @@ namespace usuarios369.Logica
 
         public int Idusuario
         {
-            get { return Idusuario; }
-            set { Idusuario = value; }
+            get { return idusuario; }
+            set { idusuario = value; }
         }
 
         public string Usuario
         {
-            get { return Usuario; }
-            set { Usuario = value; }
+            get { return usuario; }
+            set { usuario = value; }
         }
 
         public string Pass
         {
-            get { return Pass; }
-            set { Pass = value; }
+            get { return pass; }
+            set { pass = value; }
         }
 
         public byte[] Icono
         {
-            get { return Icono; }
-            set { Icono = value; }
+            get { return icono; }
+            set { icono = value; }
         }
 
         public string Estado
         {
-            get { return Estado; }
-            set { Estado = value; }
+            get { return estado; }
+            set { estado = value; }
         }
 
         public lusuarios()
