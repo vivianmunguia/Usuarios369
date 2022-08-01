@@ -33,13 +33,11 @@ namespace usuarios369.Presentacion
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnInsertar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.datalistado = new System.Windows.Forms.DataGridView();
             this.panelUsuario = new System.Windows.Forms.Panel();
-            this.Icono = new System.Windows.Forms.PictureBox();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnGuardarCambios = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -49,12 +47,18 @@ namespace usuarios369.Presentacion
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.dlg = new System.Windows.Forms.OpenFileDialog();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Icono = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado)).BeginInit();
             this.panelUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Icono)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -95,16 +99,6 @@ namespace usuarios369.Presentacion
             this.btnInsertar.UseVisualStyleBackColor = false;
             this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::usuarios369.Properties.Resources.lupa;
-            this.pictureBox1.Location = new System.Drawing.Point(315, 14);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(21, 19);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.MediumSeaGreen;
@@ -140,6 +134,9 @@ namespace usuarios369.Presentacion
             this.datalistado.AllowUserToAddRows = false;
             this.datalistado.AllowUserToDeleteRows = false;
             this.datalistado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datalistado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Eliminar,
+            this.Editar});
             this.datalistado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.datalistado.Location = new System.Drawing.Point(0, 92);
             this.datalistado.Name = "datalistado";
@@ -163,17 +160,6 @@ namespace usuarios369.Presentacion
             this.panelUsuario.Size = new System.Drawing.Size(466, 313);
             this.panelUsuario.TabIndex = 2;
             this.panelUsuario.Visible = false;
-            // 
-            // Icono
-            // 
-            this.Icono.Image = global::usuarios369.Properties.Resources.camara;
-            this.Icono.Location = new System.Drawing.Point(127, 141);
-            this.Icono.Name = "Icono";
-            this.Icono.Size = new System.Drawing.Size(100, 100);
-            this.Icono.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Icono.TabIndex = 8;
-            this.Icono.TabStop = false;
-            this.Icono.Click += new System.EventHandler(this.Icono_Click);
             // 
             // btnVolver
             // 
@@ -254,6 +240,55 @@ namespace usuarios369.Presentacion
             // 
             this.dlg.FileName = "openFileDialog1";
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "Editar";
+            this.dataGridViewImageColumn1.Image = global::usuarios369.Properties.Resources.editar;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.HeaderText = "Eliminar";
+            this.dataGridViewImageColumn2.Image = global::usuarios369.Properties.Resources.eliminar;
+            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            // 
+            // Icono
+            // 
+            this.Icono.Image = global::usuarios369.Properties.Resources.camara;
+            this.Icono.Location = new System.Drawing.Point(127, 141);
+            this.Icono.Name = "Icono";
+            this.Icono.Size = new System.Drawing.Size(100, 100);
+            this.Icono.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Icono.TabIndex = 8;
+            this.Icono.TabStop = false;
+            this.Icono.Click += new System.EventHandler(this.Icono_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::usuarios369.Properties.Resources.lupa;
+            this.pictureBox1.Location = new System.Drawing.Point(315, 14);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(21, 19);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Image = global::usuarios369.Properties.Resources.eliminar;
+            this.Eliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Eliminar.Name = "Eliminar";
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = global::usuarios369.Properties.Resources.editar;
+            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Editar.Name = "Editar";
+            // 
             // Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,11 +306,11 @@ namespace usuarios369.Presentacion
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistado)).EndInit();
             this.panelUsuario.ResumeLayout(false);
             this.panelUsuario.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Icono)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -301,5 +336,9 @@ namespace usuarios369.Presentacion
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.OpenFileDialog dlg;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn Eliminar;
+        private System.Windows.Forms.DataGridViewImageColumn Editar;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
     }
 }

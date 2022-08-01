@@ -43,6 +43,39 @@ namespace usuarios369.Datos
             }
         }
 
+        public bool editar(lusuarios dt)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                cmd = new SqlCommand("editar_usuario", CONEXIONMAESTRA.conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idusuario", dt.Idusuario);
+                cmd.Parameters.AddWithValue("@Usuario", dt.Usuario);
+                cmd.Parameters.AddWithValue("@Pass", dt.Pass);
+                cmd.Parameters.AddWithValue("@Icono", dt.Icono);
+                cmd.Parameters.AddWithValue("@Estado", dt.Estado);
+
+                if(cmd.ExecuteNonQuery() != 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
+            }
+        }
+
         public DataTable mostrar_usuarios()
         {
             try
