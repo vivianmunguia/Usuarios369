@@ -140,8 +140,10 @@ namespace usuarios369.Presentacion
             this.datalistado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.datalistado.Location = new System.Drawing.Point(0, 92);
             this.datalistado.Name = "datalistado";
+            this.datalistado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.datalistado.Size = new System.Drawing.Size(800, 358);
             this.datalistado.TabIndex = 1;
+            this.datalistado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datalistado_CellClick);
             // 
             // panelUsuario
             // 
@@ -170,6 +172,7 @@ namespace usuarios369.Presentacion
             this.btnVolver.TabIndex = 7;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // btnGuardarCambios
             // 
@@ -180,6 +183,7 @@ namespace usuarios369.Presentacion
             this.btnGuardarCambios.TabIndex = 6;
             this.btnGuardarCambios.Text = "Guardar Cambios";
             this.btnGuardarCambios.UseVisualStyleBackColor = true;
+            this.btnGuardarCambios.Click += new System.EventHandler(this.btnGuardarCambios_Click);
             // 
             // btnGuardar
             // 

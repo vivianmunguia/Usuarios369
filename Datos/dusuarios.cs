@@ -48,9 +48,9 @@ namespace usuarios369.Datos
             try
             {
                 CONEXIONMAESTRA.abrir();
-                cmd = new SqlCommand("editar_usuario", CONEXIONMAESTRA.conexion);
+                cmd = new SqlCommand("editar_usuarios", CONEXIONMAESTRA.conexion);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@idusuario", dt.Idusuario);
+                cmd.Parameters.AddWithValue("@Id_usuario", dt.Idusuario);
                 cmd.Parameters.AddWithValue("@Usuario", dt.Usuario);
                 cmd.Parameters.AddWithValue("@Pass", dt.Pass);
                 cmd.Parameters.AddWithValue("@Icono", dt.Icono);
