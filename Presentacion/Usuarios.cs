@@ -93,9 +93,22 @@ namespace usuarios369.Presentacion
 
         private void datalistado_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            idusuario = Convert.ToInt32(datalistado.SelectedCells[2].Value.ToString());
+
+            if (e.ColumnIndex == this.datalistado.Columns["Eliminar"].Index)
+            {
+                DialogResult result;
+                result = MessageBox.Show("¿Realmente desea eliminar este registro?", "Eliminando registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (result == DialogResult.OK)
+                {
+                    eliminar_usuarios();
+                    mostrar_usuarios();
+                }
+            }
+
             if (e.ColumnIndex == this.datalistado.Columns["Editar"].Index)
             {
-                idusuario = Convert.ToInt32(datalistado.SelectedCells[2].Value.ToString());
                 txtUsuario.Text = datalistado.SelectedCells[3].Value.ToString();
                 txtPass.Text = datalistado.SelectedCells[4].Value.ToString();
                 Icono.BackgroundImage = null;
@@ -140,6 +153,33 @@ namespace usuarios369.Presentacion
                 panelUsuario.Visible = false;
                 panelUsuario.Dock = DockStyle.None;
             }
+        }
+
+        private void eliminar_usuarios()
+        {
+            lusuarios dt = new lusuarios();
+            dusuarios funcion = new dusuarios();
+            dt.Idusuario = idusuario;
+
+            if (funcion.eliminar_usuarios(dt))
+            {
+                MessageBox.Show("Usuario eliminado", "Eliminación correcta");
+                panelUsuario.Visible = false;
+                panelUsuario.Dock = DockStyle.None;
+            }
+        }
+
+        private void txtbuscador_TextChanged(object sender, EventArgs e)
+        {
+            buscar_usuarios();   
+        }
+
+        private void buscar_usuarios()
+        {
+            DataTable dt;
+            dusuarios funcion = new dusuarios();
+            dt = funcion.buscar_usuarios(txtbuscador.Text);
+            datalistado.DataSource = dt;
         }
     }
 }

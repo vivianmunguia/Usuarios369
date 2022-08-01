@@ -34,7 +34,7 @@ namespace usuarios369.Presentacion
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnInsertar = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtbuscador = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.datalistado = new System.Windows.Forms.DataGridView();
             this.panelUsuario = new System.Windows.Forms.Panel();
@@ -77,7 +77,7 @@ namespace usuarios369.Presentacion
             this.panel2.Controls.Add(this.btnInsertar);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txtbuscador);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 45);
             this.panel2.Name = "panel2";
@@ -107,14 +107,15 @@ namespace usuarios369.Presentacion
             this.panel3.Size = new System.Drawing.Size(300, 1);
             this.panel3.TabIndex = 3;
             // 
-            // textBox1
+            // txtbuscador
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(9, 15);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(300, 16);
-            this.textBox1.TabIndex = 2;
+            this.txtbuscador.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbuscador.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbuscador.Location = new System.Drawing.Point(9, 15);
+            this.txtbuscador.Name = "txtbuscador";
+            this.txtbuscador.Size = new System.Drawing.Size(300, 16);
+            this.txtbuscador.TabIndex = 2;
+            this.txtbuscador.TextChanged += new System.EventHandler(this.txtbuscador_TextChanged);
             // 
             // label1
             // 
@@ -324,7 +325,7 @@ namespace usuarios369.Presentacion
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtbuscador;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnInsertar;
