@@ -8,4 +8,3 @@ Screen where we can add a new user selecting a user, a password and an icon.
 ![imagen](https://github.com/vivianmunguia/Usuarios369/assets/15255979/1cd7eb9d-e5a7-4096-996a-6305261ab748)
 
 We can also filter the users.
-![imagen](https://github.com/vivianmunguia/Usuarios369/assets/15255979/3426fa4b-dc77-4544-ac5a-dbae42683d9c)
